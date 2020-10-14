@@ -71,7 +71,7 @@ export default function Orphanage() {
           </div>
           
           <div className="orphanage-details-content">
-            <h1>L{orphanage?.name}</h1>
+            <h1>{orphanage?.name}</h1>
             <p>{orphanage?.about}</p>
 
             <div className="map-container">
@@ -111,16 +111,15 @@ export default function Orphanage() {
               </div>
 
               {orphanage.open_on_weekends ? (
-                <div className="dont-open">
-                  <FiInfo size={32} color="#FF669D" />
-                  Não atendemos <br />
-                  fim de semana
-                </div>
-                
-              ) : (
                 <div className="open-on-weekends">
                   <FiInfo size={32} color="#39CC83" />
                   Atendemos <br />
+                  fim de semana
+                </div>                
+              ) : (
+                <div className="dont-open">
+                  <FiInfo size={32} color="#FF669D" />
+                  Não atendemos <br />
                   fim de semana
                 </div>
               ) }
