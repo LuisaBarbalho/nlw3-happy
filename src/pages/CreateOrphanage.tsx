@@ -18,6 +18,7 @@ export default function CreateOrphanage() {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 });
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
+  const [whatsapp_number, setWhatsappNumber] = useState('');
   const [instructions, setInstructions] = useState('');
   const [opening_hours, setOpeningHours] = useState('');
   const [open_on_weekends, setOpenOnWeekends] = useState(true);
@@ -62,6 +63,7 @@ export default function CreateOrphanage() {
 
     data.append('name', name);
     data.append('about', about);
+    data.append('whatsapp_number', whatsapp_number);
     data.append('instructions', instructions);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
@@ -119,6 +121,16 @@ export default function CreateOrphanage() {
                 maxLength={300}
                 value={about}
                 onChange={event => setAbout(event.target.value)}
+              />
+            </div>
+
+            <div className="input-block">
+              <label htmlFor="name">Número de WhatsApp</label>
+              <p>Formato: DDD + Apenas números. Ex.: 84999999999</p>
+              <input 
+                id="whatsapp_number" 
+                value={whatsapp_number} 
+                onChange={event => setWhatsappNumber(event.target.value)}
               />
             </div>
 
